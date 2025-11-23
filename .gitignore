@@ -1,0 +1,153 @@
+# =========================
+# Odoo / Python .gitignore
+# =========================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+venv.bak/
+venv*/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+htmlcov/
+coverage.xml
+nosetests.xml
+
+# Translations (compiled)
+*.mo
+
+# Pyright / mypy / type checkers
+.mypy_cache/
+.pyre/
+.pytype/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and runtime artifacts
+*.log
+odoo.log
+openerp.log
+*.pid
+*.seed
+*.orig
+*.backup
+
+# Database / data
+*.sqlite3
+*.db
+*.dump
+filestore/
+
+# Node / frontend
+node_modules/
+npm-debug.log*
+yarn-error.log
+pnpm-lock.yaml
+package-lock.json
+dist/
+build/
+
+# Addons static build artifacts
+addons/**/node_modules/
+addons/**/static/**/node_modules/
+addons/**/static/**/dist/
+
+# Docker
+.env
+.env.*
+docker-compose.override.yml
+docker-compose.*.yml
+docker/.env
+secrets/
+*.pem
+*.key
+
+# Secrets and credentials
+*.secret
+*.key
+credentials.yml
+secrets.yml
+config/*.local
+config/*.secret
+
+# OS specific files
+ehthumbs.db
+Icon?
+__MACOSX/
+
+# Editors swap/backup
+*~
+*.swp
+*.swo
+*.swn
+
+# Python tooling
+pip-wheel-metadata/
+venv/
+.python-version
+
+# Misc
+.cache/
+.ropeproject/
+.m2/
+.terraform/
+
+# Celery
+celerybeat-schedule
+
+# JetBrains local settings
+/.idea/
+
+# Local container and build artifacts
+build/**
+tmp/
+
+# End
+

@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15 # Postgres Image
+    environment:
+      - POSTGRES_DB=postgres # Database Name
+      - POSTGRES_PASSWORD=odoo # Database Password
+      - POSTGRES_USER=odoo # Database User
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data # Database Storage
+
+  web:
+    image: odoo:18.0 # Odoo Image
+    depends_on:
+      - db # Database Service
+    ports:
+      - "8069:8069" # Odoo Port
+      - "8072:8072" # Longpolling Port
+    volumes:
+      - ./addons:/mnt/extra-addons       # Your Code
+      - ./config:/etc/odoo               # Your Configuration
+      - odoo-web-data:/var/lib/odoo      # Your Images/Attachments 
+    environment:
+      - HOST=db # Database Host
+      - USER=odoo # Database User
+      - PASSWORD=odoo # Database Password
+
+volumes:
+  odoo-db-data: # Database Storage
+  odoo-web-data: # Filestore for attachments and images
