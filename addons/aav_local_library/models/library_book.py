@@ -19,6 +19,12 @@ class LibraryBook(models.Model):
     weight = fields.Float(string="Book Weight")
     author_id = fields.Many2one("res.partner", string="Author", required=True)
     tag_ids = fields.Many2many("library.book.tag", string="Tags")
+    active = fields.Boolean(default=True)
+    state = fields.Selection(selection=[
+        ("draft", "Draft"),
+        ("available", "Available"),
+        ("lost", "Lost")
+    ], default="draft")
     
     
 class LibraryBookTag(models.Model):
@@ -26,4 +32,4 @@ class LibraryBookTag(models.Model):
     _description = "Book Tags"
     
     name = fields.Char(string="Name", required=True)
-    color = fields.Integer(string="Color")
+    color = fields.Integer(string="Color", widget="color_picker")
