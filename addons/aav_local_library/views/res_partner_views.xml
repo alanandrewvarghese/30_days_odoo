@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_inherit_aav_local_library" model="ir.ui.view">
+        <field name="name">view.partner.form.inherit.aav.local.library</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Library Works">
+                    <group>
+                        <field name="authored_book_ids" widget="one2many_list" nolabel="1">
+                            <list>
+                                <field name="name"/>
+                                <field name="date_published" string="Published Date"/>
+                                <field name="state" decoration-info="state == 'draft'" decoration-success="state == 'available'" decoration-danger="state == 'lost'"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_author"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
