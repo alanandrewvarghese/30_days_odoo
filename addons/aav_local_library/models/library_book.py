@@ -17,4 +17,13 @@ class LibraryBook(models.Model):
         ("non_fiction","Non Fiction")
     ])
     weight = fields.Float(string="Book Weight")
+    author_id = fields.Many2one("res.partner", string="Author", required=True)
+    tag_ids = fields.Many2many("library.book.tag", string="Tags")
     
+    
+class LibraryBookTag(models.Model):
+    _name = "library.book.tag"
+    _description = "Book Tags"
+    
+    name = fields.Char(string="Name", required=True)
+    color = fields.Integer(string="Color")
