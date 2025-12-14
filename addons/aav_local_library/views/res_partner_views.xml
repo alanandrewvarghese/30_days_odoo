@@ -8,13 +8,18 @@
             <xpath expr="//notebook" position="inside">
                 <page string="Library Works">
                     <group>
-                        <field name="authored_book_ids" widget="one2many_list" nolabel="1">
-                            <list>
-                                <field name="name"/>
-                                <field name="date_published" string="Published Date"/>
-                                <field name="state" decoration-info="state == 'draft'" decoration-success="state == 'available'" decoration-danger="state == 'lost'"/>
-                            </list>
-                        </field>
+                        <group>
+                            <field name="authored_book_ids" widget="one2many_list" nolabel="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="date_published" string="Published Date"/>
+                                    <field name="state" decoration-info="state == 'draft'" decoration-success="state == 'available'" decoration-danger="state == 'lost'"/>
+                                </list>
+                            </field>
+                        </group>                        
+                        <group>                        
+                            <field name="total_pages"/>
+                        </group>                        
                     </group>
                 </page>
             </xpath>
