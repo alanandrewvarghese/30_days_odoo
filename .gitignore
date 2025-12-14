@@ -149,5 +149,8 @@ celerybeat-schedule
 build/**
 tmp/
 
+# Local Odoo development
+odoo-18.0/
+
 # End
 
